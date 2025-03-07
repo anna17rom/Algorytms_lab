@@ -1,0 +1,8 @@
+{"version": 2, "width": 80, "height": 24, "timestamp": 1715025678, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+[0.040062, "o", "\u001b[?2004h\u001b]0;anna@anna: ~/mk1-272395/Alg_lab/lab3/Zadanie5\u0007\u001b[01;32manna@anna\u001b[00m:\u001b[01;34m~/mk1-272395/Alg_lab/lab3/Zadanie5\u001b[00m$ "]
+[2.27874, "o", "\u001b[7mpython3 Zadanie5_sala.py\u001b[27m\r\n\r"]
+[3.046333, "o", "\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cpython3 Zadanie5_sala.py\r\n\r\u001b[A"]
+[3.046654, "o", "\r\n\u001b[?2004l\r"]
+[4.701868, "o", "qs - Coefficient: 1.1544995468498416, Intercept: 3.2260905423928588, R-squared: 0.999823611939374\r\nqs_classic - Coefficient: 1.1228484896082775, Intercept: 1.6665269194924122, R-squared: 0.998429280574305\r\nqs_worst - Coefficient: 1.9998191937164744, Intercept: -0.9313616158629312, R-squared: 0.9999565689457475\r\ndpqs_classic - Coefficient: 1.125418842393401, Intercept: 1.5428289293207413, R-squared: 0.9990689688519245\r\ndpqs - Coefficient: 1.1523587891597684, Intercept: 3.798739139346436, R-squared: 0.9998866822069405\r\n"]
+[4.868183, "o", "\u001b[?2004h\u001b]0;anna@anna: ~/mk1-272395/Alg_lab/lab3/Zadanie5\u0007\u001b[01;32manna@anna\u001b[00m:\u001b[01;34m~/mk1-272395/Alg_lab/lab3/Zadanie5\u001b[00m$ "]
+[7.021781, "o", "\u001b[?2004l\r\r\nexit\r\n"]
