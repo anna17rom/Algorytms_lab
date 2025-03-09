@@ -6,14 +6,14 @@ public class Zadanie3 {
     static public class CircularDoublyLinkedList {
         int length;
         Element startElement;
-        List<Element> elements = new ArrayList<>();
+
 
         public CircularDoublyLinkedList() {
             length = 0;
             startElement = null;
         }
 
-        public Element findLastElement(Element startElement) {
+        public Element FindLastElement(Element startElement) {
             Element findTheLast = startElement;
             while (findTheLast.next != startElement) {
                 findTheLast = findTheLast.next;
@@ -26,13 +26,12 @@ public class Zadanie3 {
             if (startElement == null) {
                 startElement = element;
             } else {
-                Element findTheLast = findLastElement(startElement);
+                Element findTheLast = FindLastElement(startElement);
                 findTheLast.next = element;
                 element.previous = findTheLast;
                 element.next = startElement;
                 startElement.previous = element;
             }
-            elements.add(element);
             length++;
         }
 
@@ -66,6 +65,21 @@ public class Zadanie3 {
         l.add(i);
     }
 
+    public CircularDoublyLinkedList merge(CircularDoublyLinkedList l1, CircularDoublyLinkedList l2) {
+        if (l1.startElement == null && l2.startElement != null) {
+            l1.startElement = l2.startElement;
+        } else {
+            Element FindTheLast = l1.FindLastElement(l1.startElement);
+            FindTheLast.next = l2.startElement;
+            l2.startElement.previous = FindTheLast;
+            FindTheLast = l2.FindLastElement(l2.startElement);
+            FindTheLast.next = l1.startElement;
+            l1.startElement.previous = FindTheLast;
+            l1.length += l2.length;
+
+        }
+        return l1;
+    }
 
 
     public int find(CircularDoublyLinkedList list, int data, boolean searchForward) {
@@ -99,6 +113,8 @@ public class Zadanie3 {
         }
         list1.print();
         list2.print();
+        CircularDoublyLinkedList mergedlist = c.merge(list1, list2);
+        mergedlist.print();
 
 
         CircularDoublyLinkedList list3 = new CircularDoublyLinkedList();

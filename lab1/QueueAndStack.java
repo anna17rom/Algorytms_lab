@@ -5,26 +5,44 @@ import java.util.Random;
 public class QueueAndStack {
     //FIFO
     static class Queue<T> {
-        private List<T> elemens = new ArrayList<>();
+        private T[] elements;
+        int start;
+        int end;
+        int copacity;
+
+        public Queue( int copacity) {
+            // Tworzymy tablicę obiektów i rzutujemy na T[]
+            this.copacity = copacity;
+            elements = (T[]) new Object[copacity];
+            start = 0;
+            end = 0;
+        }
 
         public void add(T element) {
-            elemens.add(element);
+            if (end >= this.copacity) {
+                throw new IllegalStateException("Kolejka jest przepełniona.");
+            }
+            elements[end] = element;
+            end++;
         }
 
         public T pick() {
-            if (elemens.isEmpty()) {
-                throw new IllegalStateException("There is no elements in the queue");
+            if (start == end) {
+                throw new IllegalStateException("Kolejka jest pusta.");
             }
-            return elemens.remove(0);
+            T result = elements[start];
+            start++;
+            return result;
         }
 
         public void print() {
             for (int i = 0; i < 50; i++) {
                 try {
-                    int element = (int) this.pick();
+                    T element = pick();
                     System.out.print(" " + element + " ");
                 } catch (IllegalStateException e) {
                     System.out.println("E: " + e.getMessage());
+                    break;
                 }
             }
         }
@@ -32,22 +50,35 @@ public class QueueAndStack {
 
     // LIFO
     static class Stack<T> {
-        private List<T> elements= new ArrayList<>();
+        private T[] elements;
+        private int top;
+        private int capacity;
+
+        public Stack(int capacity) {
+            this.capacity = capacity;
+            elements = (T[]) new Object[capacity];
+            top = 0;
+        }
 
         public void push(T element) {
-            elements.add(element);
+            if (top >= capacity) {
+                throw new IllegalStateException("Stos jest przepełniony.");
+            }
+            elements[top] = element;
+            top++;
         }
 
         public T pop() {
-            if (elements.isEmpty()) {
-                throw new IllegalStateException("Stos jest pusty");
+            if (top == 0) {
+                throw new IllegalStateException("Stos jest pusty.");
             }
-            return elements.remove(elements.size() - 1);
+            top--;
+            return elements[top];
         }
         public void print(){
             for (int i = 0; i < 50; i++) {
                 try {
-                    int element = (int) this.pop();
+                    T element = pop();
                     System.out.print(" " + element+" ");
                 } catch (IllegalStateException e) {
                     System.out.println("E: " + e.getMessage());
@@ -57,8 +88,9 @@ public class QueueAndStack {
     }
 
     public static void main(String[] args) {
-        Queue<Integer> queue = new Queue<>();
-        Stack<Integer> stack = new Stack<>();
+        int copacity = 50;
+        Queue<Integer> queue = new Queue<>(50);
+        Stack<Integer> stack = new Stack<>(50);
         Random random = new Random();
 
         for (int i = 1; i <= 50; i++) {

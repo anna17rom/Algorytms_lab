@@ -6,7 +6,7 @@ public class Zadanie2 {
     static public class CircularLinkedList {
         int length;
         Element startElement;
-        List<Element> elements = new ArrayList<Element>();
+
 
         public CircularLinkedList() {
             length = 0;
@@ -30,7 +30,6 @@ public class Zadanie2 {
                 FindTheLast.next = element;
                 element.next = startElement;
             }
-            elements.add(element);
             length++;
         }
 
@@ -72,9 +71,7 @@ public class Zadanie2 {
             FindTheLast.next = l2.startElement;
             FindTheLast = l2.FindLastElement(l2.startElement);
             FindTheLast.next = l1.startElement;
-            for (int i = 0; i < l2.elements.size(); i++) {
-                l1.elements.add(l2.elements.get(i));
-            }
+            l1.length += l2.length;
 
         }
         return l1;
@@ -112,7 +109,6 @@ public class Zadanie2 {
         CircularLinkedList mergedlist = c.merge(list1, list2);
         mergedlist.print();
 
-        //
         CircularLinkedList list3 = new CircularLinkedList();
         int[] T = new int[10000];
         for (int i = 0; i < 10000; i++) {
